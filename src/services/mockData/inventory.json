@@ -1,0 +1,145 @@
+[
+  {
+    "Id": 1,
+    "name": "Tomato Seeds",
+    "category": "Seeds",
+    "currentStock": 45,
+    "maxCapacity": 100,
+    "unit": "packets",
+    "supplier": "GreenGrow Supplies",
+    "lastRestocked": "2024-01-15T00:00:00.000Z",
+    "minimumThreshold": 20
+  },
+  {
+    "Id": 2,
+    "name": "Corn Seeds",
+    "category": "Seeds",
+    "currentStock": 25,
+    "maxCapacity": 80,
+    "unit": "bags",
+    "supplier": "Farm Fresh Seeds",
+    "lastRestocked": "2024-01-10T00:00:00.000Z",
+    "minimumThreshold": 15
+  },
+  {
+    "Id": 3,
+    "name": "Lettuce Seeds",
+    "category": "Seeds",
+    "currentStock": 8,
+    "maxCapacity": 50,
+    "unit": "packets",
+    "supplier": "Organic Harvest",
+    "lastRestocked": "2023-12-20T00:00:00.000Z",
+    "minimumThreshold": 10
+  },
+  {
+    "Id": 4,
+    "name": "Carrot Seeds",
+    "category": "Seeds",
+    "currentStock": 35,
+    "maxCapacity": 60,
+    "unit": "packets",
+    "supplier": "GreenGrow Supplies",
+    "lastRestocked": "2024-01-12T00:00:00.000Z",
+    "minimumThreshold": 12
+  },
+  {
+    "Id": 5,
+    "name": "Nitrogen Fertilizer",
+    "category": "Fertilizers",
+    "currentStock": 120,
+    "maxCapacity": 200,
+    "unit": "kg",
+    "supplier": "AgriChem Solutions",
+    "lastRestocked": "2024-01-08T00:00:00.000Z",
+    "minimumThreshold": 50
+  },
+  {
+    "Id": 6,
+    "name": "Phosphorus Fertilizer",
+    "category": "Fertilizers",
+    "currentStock": 180,
+    "maxCapacity": 200,
+    "unit": "kg",
+    "supplier": "AgriChem Solutions",
+    "lastRestocked": "2024-01-14T00:00:00.000Z",
+    "minimumThreshold": 40
+  },
+  {
+    "Id": 7,
+    "name": "Potassium Fertilizer",
+    "category": "Fertilizers",
+    "currentStock": 30,
+    "maxCapacity": 150,
+    "unit": "kg",
+    "supplier": "FertilizerPlus",
+    "lastRestocked": "2023-12-28T00:00:00.000Z",
+    "minimumThreshold": 35
+  },
+  {
+    "Id": 8,
+    "name": "Organic Compost",
+    "category": "Fertilizers",
+    "currentStock": 95,
+    "maxCapacity": 300,
+    "unit": "kg",
+    "supplier": "EcoGreen Organics",
+    "lastRestocked": "2024-01-05T00:00:00.000Z",
+    "minimumThreshold": 60
+  },
+  {
+    "Id": 9,
+    "name": "Tractor",
+    "category": "Equipment",
+    "currentStock": 2,
+    "maxCapacity": 3,
+    "unit": "units",
+    "supplier": "John Deere",
+    "lastRestocked": "2023-06-15T00:00:00.000Z",
+    "minimumThreshold": 1
+  },
+  {
+    "Id": 10,
+    "name": "Irrigation System",
+    "category": "Equipment",
+    "currentStock": 1,
+    "maxCapacity": 2,
+    "unit": "systems",
+    "supplier": "AquaTech Systems",
+    "lastRestocked": "2023-08-20T00:00:00.000Z",
+    "minimumThreshold": 1
+  },
+  {
+    "Id": 11,
+    "name": "Harvester",
+    "category": "Equipment",
+    "currentStock": 0,
+    "maxCapacity": 2,
+    "unit": "units",
+    "supplier": "AgriMachinery Co",
+    "lastRestocked": "2023-05-10T00:00:00.000Z",
+    "minimumThreshold": 1
+  },
+  {
+    "Id": 12,
+    "name": "Plowing Equipment",
+    "category": "Equipment",
+    "currentStock": 3,
+    "maxCapacity": 4,
+    "unit": "units",
+    "supplier": "FarmTech Solutions",
+    "lastRestocked": "2023-09-12T00:00:00.000Z",
+    "minimumThreshold": 2
+  },
+  {
+    "Id": 13,
+    "name": "Sprayer",
+    "category": "Equipment",
+    "currentStock": 2,
+    "maxCapacity": 3,
+    "unit": "units",
+    "supplier": "SprayMaster Pro",
+    "lastRestocked": "2023-07-18T00:00:00.000Z",
+    "minimumThreshold": 1
+  }
+]

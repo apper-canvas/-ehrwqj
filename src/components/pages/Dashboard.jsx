@@ -13,17 +13,18 @@ import farmService from '@/services/api/farmService';
 import cropService from '@/services/api/cropService';
 import taskService from '@/services/api/taskService';
 import transactionService from '@/services/api/transactionService';
-
+import inventoryService from '@/services/api/inventoryService';
+import StockTable from '@/components/molecules/StockTable';
 const Dashboard = () => {
-  const [data, setData] = useState({
+const [data, setData] = useState({
     farms: [],
     crops: [],
     tasks: [],
-    transactions: []
+    transactions: [],
+    inventory: []
   });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
   // Mock weather data for demonstration
   const weatherForecast = [
     {
@@ -60,15 +61,16 @@ const Dashboard = () => {
     setLoading(true);
     setError(null);
     
-    try {
-      const [farms, crops, tasks, transactions] = await Promise.all([
+try {
+      const [farms, crops, tasks, transactions, inventory] = await Promise.all([
         farmService.getAll(),
         cropService.getAll(),
         taskService.getAll(),
-        transactionService.getAll()
+        transactionService.getAll(),
+        inventoryService.getAll()
       ]);
 
-      setData({ farms, crops, tasks, transactions });
+      setData({ farms, crops, tasks, transactions, inventory });
     } catch (err) {
       console.error('Error loading dashboard data:', err);
       setError(err.message || 'Failed to load dashboard data');
@@ -94,7 +96,7 @@ const Dashboard = () => {
     }
   };
 
-  // Calculate stats
+// Calculate stats
   const stats = {
     totalFarms: data.farms.length,
     activeCrops: data.crops.filter(crop => crop.status !== 'Harvested').length,
@@ -108,7 +110,10 @@ const Dashboard = () => {
         return sum + (transaction.type === 'income' ? transaction.amount : -transaction.amount);
       }
       return sum;
-    }, 0)
+    }, 0),
+    lowStockItems: data.inventory.filter(item => 
+      item.currentStock <= item.minimumThreshold
+    ).length
   };
 
   const upcomingTasks = data.tasks
@@ -119,7 +124,6 @@ const Dashboard = () => {
   const overdueTasks = data.tasks.filter(task => 
     !task.completed && isAfter(new Date(), new Date(task.dueDate))
   ).length;
-
   if (loading) {
     return (
       <div className="p-6 space-y-6">
@@ -170,8 +174,8 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+{/* Stats Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -223,14 +227,40 @@ const Dashboard = () => {
             color={stats.monthlyProfit >= 0 ? "success" : "error"}
           />
         </motion.div>
+        
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+        >
+          <StatCard
+            title="Low Stock Items"
+            value={stats.lowStockItems}
+            icon="AlertTriangle"
+            color={stats.lowStockItems > 0 ? "error" : "success"}
+          />
+        </motion.div>
       </div>
+{/* Stock Overview */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6 }}
+      >
+        <StockTable
+          inventory={data.inventory}
+          loading={loading}
+          error={error}
+          onRetry={loadDashboardData}
+        />
+      </motion.div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Upcoming Tasks */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.5 }}
+          transition={{ delay: 0.7 }}
           className="bg-white rounded-xl p-6 shadow-sm border border-surface-200"
         >
           <div className="flex items-center justify-between mb-4">
@@ -277,7 +307,7 @@ const Dashboard = () => {
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.6 }}
+          transition={{ delay: 0.8 }}
           className="bg-white rounded-xl p-6 shadow-sm border border-surface-200"
         >
           <div className="flex items-center justify-between mb-4">
