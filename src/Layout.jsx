@@ -1,9 +1,33 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Outlet, NavLink } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useSelector } from 'react-redux';
 import ApperIcon from '@/components/ApperIcon';
 import { routeArray } from '@/config/routes';
+import { AuthContext } from '@/App';
 
+const LogoutButton = () => {
+  const { logout } = useContext(AuthContext);
+  const user = useSelector((state) => state.user.user);
+  
+  if (!user) return null;
+  
+  return (
+    <div className="flex items-center gap-3">
+      <span className="text-sm text-gray-600 hidden sm:block">
+        {user.firstName} {user.lastName}
+      </span>
+      <button
+        onClick={logout}
+        className="flex items-center gap-2 px-3 py-2 text-sm text-gray-600 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+        title="Logout"
+      >
+        <ApperIcon name="LogOut" size={16} />
+        <span className="hidden sm:block">Logout</span>
+      </button>
+    </div>
+  );
+};
 const Layout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -28,7 +52,7 @@ const Layout = () => {
               <h1 className="text-xl font-heading font-semibold text-primary">FarmFlow</h1>
             </div>
           </div>
-          <div className="flex items-center gap-4">
+<div className="flex items-center gap-4">
             <div className="text-sm text-gray-600">
               {new Date().toLocaleDateString('en-US', { 
                 weekday: 'long', 
@@ -37,6 +61,7 @@ const Layout = () => {
                 day: 'numeric' 
               })}
             </div>
+            <LogoutButton />
           </div>
         </div>
       </header>
