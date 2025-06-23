@@ -14,7 +14,7 @@ const [formData, setFormData] = useState({
     title: task?.title || '',
     type: task?.type || '',
     status: task?.status || 'Not Started',
-    dueDate: task?.dueDate ? new Date(task.dueDate).toISOString().split('T')[0] : '',
+    dueDate: task?.dueDate && !isNaN(new Date(task.dueDate)) ? new Date(task.dueDate).toISOString().split('T')[0] : '',
     notes: task?.notes || ''
   });
   const [farms, setFarms] = useState([]);
@@ -112,11 +112,11 @@ const validateForm = () => {
 
     setLoading(true);
     try {
-      const taskData = {
+const taskData = {
         ...formData,
         farmId: parseInt(formData.farmId, 10),
         cropId: formData.cropId ? parseInt(formData.cropId, 10) : null,
-        dueDate: new Date(formData.dueDate).toISOString()
+        dueDate: formData.dueDate ? new Date(formData.dueDate).toISOString() : null
       };
 
       let result;
