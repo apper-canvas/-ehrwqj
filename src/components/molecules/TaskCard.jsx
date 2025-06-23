@@ -17,7 +17,7 @@ const TaskCard = ({ task, onToggleComplete, onEdit, onDelete, className = '' }) 
     return colors[type] || 'default';
   };
 
-  const isOverdue = new Date(task.dueDate) < new Date() && !task.completed;
+const isOverdue = task.dueDate && !isNaN(new Date(task.dueDate)) && new Date(task.dueDate) < new Date() && !task.completed;
 
   return (
     <motion.div
@@ -53,11 +53,14 @@ const TaskCard = ({ task, onToggleComplete, onEdit, onDelete, className = '' }) 
                 )}
               </div>
               <div className="flex items-center gap-4 text-sm text-gray-600 mb-2">
-                <div className="flex items-center gap-1">
+<div className="flex items-center gap-1">
                   <ApperIcon name="Calendar" size={14} />
-                  {format(new Date(task.dueDate), 'MMM dd, yyyy')}
+                  {task.dueDate && !isNaN(new Date(task.dueDate)) 
+                    ? format(new Date(task.dueDate), 'MMM dd, yyyy')
+                    : 'No due date'
+                  }
                 </div>
-                {task.completedDate && (
+                {task.completedDate && !isNaN(new Date(task.completedDate)) && (
                   <div className="flex items-center gap-1 text-success">
                     <ApperIcon name="CheckCircle" size={14} />
                     Completed {format(new Date(task.completedDate), 'MMM dd')}
