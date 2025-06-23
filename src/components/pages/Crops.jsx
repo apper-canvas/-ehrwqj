@@ -286,10 +286,10 @@ const handleFormSubmit = async (cropData) => {
                       {crop.area} acres
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      {format(new Date(crop.plantingDate), 'MMM dd, yyyy')}
+{crop.planting_date ? format(new Date(crop.planting_date), 'MMM dd, yyyy') : 'Not set'}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      {format(new Date(crop.expectedHarvestDate), 'MMM dd, yyyy')}
+                      {crop.expected_harvest_date ? format(new Date(crop.expected_harvest_date), 'MMM dd, yyyy') : 'Not set'}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-right">
                       <div className="flex items-center gap-1 justify-end">

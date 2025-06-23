@@ -2,9 +2,9 @@
   {
     "Id": 1,
     "farmId": 1,
-    "cropType": "Corn",
+"cropType": "Corn",
     "plantingDate": "2024-04-15T00:00:00.000Z",
-    "expectedHarvestDate": "9/30/2024 12:00:00 AMZ",
+    "expectedHarvestDate": "2024-09-30T00:00:00.000Z",
     "status": "Growing",
     "area": 45,
     "notes": "High-yield hybrid variety. Regular watering schedule maintained."
@@ -22,9 +22,9 @@
   {
     "Id": 3,
     "farmId": 2,
-    "cropType": "Wheat",
+"cropType": "Wheat",
     "plantingDate": "2024-03-20T00:00:00.000Z",
-    "expectedHarvestDate": "7/30/2024 12:00:00 AM.000Z",
+    "expectedHarvestDate": "2024-07-30T00:00:00.000Z",
     "status": "Ready to Harvest",
     "area": 60,
     "notes": "Winter wheat variety showing excellent growth patterns."
