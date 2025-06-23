@@ -10,10 +10,11 @@ const taskService = {
       });
 
       const params = {
-        fields: [
+fields: [
           { field: { Name: "Name" } },
           { field: { Name: "title" } },
           { field: { Name: "type" } },
+          { field: { Name: "status" } },
           { field: { Name: "due_date" } },
           { field: { Name: "completed" } },
           { field: { Name: "completed_date" } },
@@ -59,10 +60,11 @@ const taskService = {
       });
 
       const params = {
-        fields: [
+fields: [
           { field: { Name: "Name" } },
           { field: { Name: "title" } },
           { field: { Name: "type" } },
+          { field: { Name: "status" } },
           { field: { Name: "due_date" } },
           { field: { Name: "completed" } },
           { field: { Name: "completed_date" } },
@@ -105,10 +107,11 @@ const taskService = {
       });
 
       const params = {
-        fields: [
+fields: [
           { field: { Name: "Name" } },
           { field: { Name: "title" } },
           { field: { Name: "type" } },
+          { field: { Name: "status" } },
           { field: { Name: "due_date" } },
           { field: { Name: "completed" } },
           { field: { Name: "completed_date" } },
@@ -156,10 +159,11 @@ const taskService = {
       });
 
       // Only include Updateable fields
-      const filteredData = {
+const filteredData = {
         Name: taskData.Name || taskData.name || taskData.title,
         title: taskData.title,
         type: taskData.type,
+        status: taskData.status,
         due_date: taskData.due_date || taskData.dueDate,
         completed: false,
         completed_date: null,
@@ -223,11 +227,12 @@ const taskService = {
       });
 
       // Only include Updateable fields
-      const filteredData = {
+const filteredData = {
         Id: numericId,
         Name: taskData.Name || taskData.name || taskData.title,
         title: taskData.title,
         type: taskData.type,
+        status: taskData.status,
         due_date: taskData.due_date || taskData.dueDate,
         completed: taskData.completed,
         completed_date: taskData.completed_date || taskData.completedDate,

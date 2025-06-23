@@ -8,11 +8,12 @@ import farmService from '@/services/api/farmService';
 import cropService from '@/services/api/cropService';
 
 const TaskForm = ({ task = null, onSubmit, onCancel }) => {
-  const [formData, setFormData] = useState({
+const [formData, setFormData] = useState({
     farmId: task?.farmId || '',
     cropId: task?.cropId || '',
     title: task?.title || '',
     type: task?.type || '',
+    status: task?.status || 'Not Started',
     dueDate: task?.dueDate ? new Date(task.dueDate).toISOString().split('T')[0] : '',
     notes: task?.notes || ''
   });
@@ -22,7 +23,7 @@ const TaskForm = ({ task = null, onSubmit, onCancel }) => {
   const [loadingData, setLoadingData] = useState(true);
   const [errors, setErrors] = useState({});
 
-  const taskTypeOptions = [
+const taskTypeOptions = [
     { value: 'Watering', label: 'Watering' },
     { value: 'Fertilizing', label: 'Fertilizing' },
     { value: 'Harvesting', label: 'Harvesting' },
@@ -31,6 +32,13 @@ const TaskForm = ({ task = null, onSubmit, onCancel }) => {
     { value: 'Planting', label: 'Planting' },
     { value: 'Pest Control', label: 'Pest Control' },
     { value: 'Other', label: 'Other' }
+  ];
+
+  const taskStatusOptions = [
+    { value: 'Not Started', label: 'Not Started' },
+    { value: 'In Progress', label: 'In Progress' },
+    { value: 'Completed', label: 'Completed' },
+    { value: 'On Hold', label: 'On Hold' }
   ];
 
   useEffect(() => {
@@ -68,7 +76,7 @@ setFarms(farmsData.map(farm => ({
       }));
   };
 
-  const validateForm = () => {
+const validateForm = () => {
     const newErrors = {};
     
     if (!formData.farmId) {
@@ -81,6 +89,10 @@ setFarms(farmsData.map(farm => ({
     
     if (!formData.type) {
       newErrors.type = 'Please select a task type';
+    }
+    
+    if (!formData.status) {
+      newErrors.status = 'Please select a task status';
     }
     
     if (!formData.dueDate) {
@@ -199,7 +211,7 @@ setFarms(farmsData.map(farm => ({
           placeholder="Enter task title"
         />
 
-        <div className="grid grid-cols-2 gap-4">
+<div className="grid grid-cols-2 gap-4">
           <FormField
             type="select"
             label="Task Type"
@@ -211,14 +223,24 @@ setFarms(farmsData.map(farm => ({
           />
 
           <FormField
-            label="Due Date"
-            name="dueDate"
-            type="date"
-            value={formData.dueDate}
+            type="select"
+            label="Status"
+            name="status"
+            value={formData.status}
             onChange={handleChange}
-            error={errors.dueDate}
+            error={errors.status}
+            options={[{ value: '', label: 'Select status' }, ...taskStatusOptions]}
           />
         </div>
+
+        <FormField
+          label="Due Date"
+          name="dueDate"
+          type="date"
+          value={formData.dueDate}
+          onChange={handleChange}
+          error={errors.dueDate}
+        />
 
         <FormField
           label="Notes"
