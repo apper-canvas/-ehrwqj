@@ -18,8 +18,8 @@ const cropService = {
           { field: { Name: "status" } },
           { field: { Name: "area" } },
           { field: { Name: "notes" } },
-          { 
-            field: { name: "farm_id" },
+{ 
+            field: { Name: "farm_id" },
             referenceField: { field: { Name: "Name" } }
           }
         ]
@@ -64,7 +64,7 @@ const cropService = {
           { field: { Name: "area" } },
           { field: { Name: "notes" } },
           { 
-            field: { name: "farm_id" },
+field: { Name: "farm_id" },
             referenceField: { field: { Name: "Name" } }
           }
         ]
@@ -106,7 +106,7 @@ const cropService = {
           { field: { Name: "area" } },
           { field: { Name: "notes" } },
           { 
-            field: { name: "farm_id" },
+field: { Name: "farm_id" },
             referenceField: { field: { Name: "Name" } }
           }
         ],

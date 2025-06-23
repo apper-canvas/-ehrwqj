@@ -57,16 +57,25 @@ const Crops = () => {
     setShowForm(true);
   };
 
-  const handleFormSubmit = (cropData) => {
-    if (editingCrop) {
-      setCrops(prev => prev.map(crop => 
-        crop.Id === editingCrop.Id ? cropData : crop
-      ));
-    } else {
-      setCrops(prev => [...prev, cropData]);
+const handleFormSubmit = async (cropData) => {
+    try {
+      if (editingCrop) {
+        const updatedCrop = await cropService.update(editingCrop.Id, cropData);
+        setCrops(prev => prev.map(crop => 
+          crop.Id === editingCrop.Id ? updatedCrop : crop
+        ));
+        toast.success('Crop updated successfully');
+      } else {
+        const newCrop = await cropService.create(cropData);
+        setCrops(prev => [...prev, newCrop]);
+        toast.success('Crop created successfully');
+      }
+      setShowForm(false);
+      setEditingCrop(null);
+    } catch (error) {
+      console.error('Error saving crop:', error);
+      toast.error('Failed to save crop');
     }
-    setShowForm(false);
-    setEditingCrop(null);
   };
 
   const handleDeleteCrop = async (cropId) => {
