@@ -40,12 +40,12 @@ const TaskForm = ({ task = null, onSubmit, onCancel }) => {
           farmService.getAll(),
           cropService.getAll()
         ]);
-        
-        setFarms(farmsData.map(farm => ({
+setFarms(farmsData.map(farm => ({
           value: farm.Id,
-          label: farm.name
+          label: farm.Name
         })));
         
+        setCrops(cropsData);
         setCrops(cropsData);
       } catch (error) {
         console.error('Error loading data:', error);

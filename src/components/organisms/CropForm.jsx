@@ -44,10 +44,10 @@ const CropForm = ({ crop = null, onSubmit, onCancel }) => {
   useEffect(() => {
     const loadFarms = async () => {
       try {
-        const farmsData = await farmService.getAll();
+const farmsData = await farmService.getAll();
         setFarms(farmsData.map(farm => ({
           value: farm.Id,
-          label: farm.name
+          label: farm.Name
         })));
       } catch (error) {
         console.error('Error loading farms:', error);
