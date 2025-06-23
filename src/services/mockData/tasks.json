@@ -1,0 +1,68 @@
+[
+  {
+    "Id": 1,
+    "farmId": 1,
+    "cropId": 1,
+    "title": "Weekly Watering",
+    "type": "Watering",
+    "dueDate": "2024-07-20T00:00:00.000Z",
+    "completed": false,
+    "completedDate": null,
+    "notes": "Deep watering session for corn field - 2 inches minimum"
+  },
+  {
+    "Id": 2,
+    "farmId": 1,
+    "cropId": 2,
+    "title": "Fertilizer Application",
+    "type": "Fertilizing",
+    "dueDate": "2024-07-18T00:00:00.000Z",
+    "completed": true,
+    "completedDate": "2024-07-17T00:00:00.000Z",
+    "notes": "Applied nitrogen-rich fertilizer to soybean field"
+  },
+  {
+    "Id": 3,
+    "farmId": 2,
+    "cropId": 3,
+    "title": "Harvest Wheat",
+    "type": "Harvesting",
+    "dueDate": "2024-07-22T00:00:00.000Z",
+    "completed": false,
+    "completedDate": null,
+    "notes": "Weather conditions optimal for harvesting. Schedule combine operator."
+  },
+  {
+    "Id": 4,
+    "farmId": 3,
+    "cropId": 4,
+    "title": "Pest Inspection",
+    "type": "Inspection",
+    "dueDate": "2024-07-19T00:00:00.000Z",
+    "completed": false,
+    "completedDate": null,
+    "notes": "Check for aphids and other common tomato pests"
+  },
+  {
+    "Id": 5,
+    "farmId": 4,
+    "cropId": 5,
+    "title": "Hill Potatoes",
+    "type": "Cultivation",
+    "dueDate": "2024-07-21T00:00:00.000Z",
+    "completed": false,
+    "completedDate": null,
+    "notes": "Hill potato rows to promote better tuber development"
+  },
+  {
+    "Id": 6,
+    "farmId": 1,
+    "cropId": 1,
+    "title": "Weed Control",
+    "type": "Cultivation",
+    "dueDate": "2024-07-25T00:00:00.000Z",
+    "completed": false,
+    "completedDate": null,
+    "notes": "Apply herbicide treatment between corn rows"
+  }
+]

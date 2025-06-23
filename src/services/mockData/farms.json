@@ -1,0 +1,34 @@
+[
+  {
+    "Id": 1,
+    "name": "Green Valley Farm",
+    "location": "Springfield County, IL",
+    "size": 120,
+    "sizeUnit": "acres",
+    "createdAt": "2024-01-15T00:00:00.000Z"
+  },
+  {
+    "Id": 2,
+    "name": "Sunny Meadows",
+    "location": "Lancaster County, PA",
+    "size": 85,
+    "sizeUnit": "acres",
+    "createdAt": "2024-02-10T00:00:00.000Z"
+  },
+  {
+    "Id": 3,
+    "name": "Ridge Top Ranch",
+    "location": "Davis County, IA",
+    "size": 200,
+    "sizeUnit": "acres",
+    "createdAt": "2024-03-05T00:00:00.000Z"
+  },
+  {
+    "Id": 4,
+    "name": "Prairie View Fields",
+    "location": "Champaign County, IL",
+    "size": 150,
+    "sizeUnit": "acres",
+    "createdAt": "2024-03-20T00:00:00.000Z"
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "Id": 1,
+    "farmId": 1,
+    "type": "expense",
+    "category": "Seeds",
+    "amount": 1250.00,
+    "date": "2024-04-10T00:00:00.000Z",
+    "description": "Corn and soybean seed purchase for spring planting"
+  },
+  {
+    "Id": 2,
+    "farmId": 1,
+    "type": "expense",
+    "category": "Equipment",
+    "amount": 350.00,
+    "date": "2024-04-15T00:00:00.000Z",
+    "description": "Tractor maintenance and oil change"
+  },
+  {
+    "Id": 3,
+    "farmId": 2,
+    "type": "income",
+    "category": "Grain Sales",
+    "amount": 8500.00,
+    "date": "2024-07-15T00:00:00.000Z",
+    "description": "Wheat harvest sale to local grain elevator"
+  },
+  {
+    "Id": 4,
+    "farmId": 1,
+    "type": "expense",
+    "category": "Fertilizer",
+    "amount": 890.00,
+    "date": "2024-05-20T00:00:00.000Z",
+    "description": "Nitrogen fertilizer for soybean field application"
+  },
+  {
+    "Id": 5,
+    "farmId": 3,
+    "type": "expense",
+    "category": "Labor",
+    "amount": 1200.00,
+    "date": "2024-06-01T00:00:00.000Z",
+    "description": "Seasonal workers for tomato planting and setup"
+  },
+  {
+    "Id": 6,
+    "farmId": 4,
+    "type": "income",
+    "category": "Vegetable Sales",
+    "amount": 2400.00,
+    "date": "2024-07-10T00:00:00.000Z",
+    "description": "Early potato harvest sold to local restaurants"
+  },
+  {
+    "Id": 7,
+    "farmId": 2,
+    "type": "expense",
+    "category": "Fuel",
+    "amount": 450.00,
+    "date": "2024-06-15T00:00:00.000Z",
+    "description": "Diesel fuel for harvesting operations"
+  }
+]

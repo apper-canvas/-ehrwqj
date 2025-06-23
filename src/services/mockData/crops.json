@@ -1,0 +1,52 @@
+[
+  {
+    "Id": 1,
+    "farmId": 1,
+    "cropType": "Corn",
+    "plantingDate": "2024-04-15T00:00:00.000Z",
+    "expectedHarvestDate": "9/30/2024 12:00:00 AMZ",
+    "status": "Growing",
+    "area": 45,
+    "notes": "High-yield hybrid variety. Regular watering schedule maintained."
+  },
+  {
+    "Id": 2,
+    "farmId": 1,
+    "cropType": "Soybeans",
+    "plantingDate": "2024-05-01T00:00:00.000Z",
+    "expectedHarvestDate": "2024-10-15T00:00:00.000Z",
+    "status": "Growing",
+    "area": 35,
+    "notes": "Organic certification process ongoing."
+  },
+  {
+    "Id": 3,
+    "farmId": 2,
+    "cropType": "Wheat",
+    "plantingDate": "2024-03-20T00:00:00.000Z",
+    "expectedHarvestDate": "7/30/2024 12:00:00 AM.000Z",
+    "status": "Ready to Harvest",
+    "area": 60,
+    "notes": "Winter wheat variety showing excellent growth patterns."
+  },
+  {
+    "Id": 4,
+    "farmId": 3,
+    "cropType": "Tomatoes",
+    "plantingDate": "2024-05-15T00:00:00.000Z",
+    "expectedHarvestDate": "2024-08-20T00:00:00.000Z",
+    "status": "Flowering",
+    "area": 25,
+    "notes": "Greenhouse cultivation for premium market sales."
+  },
+  {
+    "Id": 5,
+    "farmId": 4,
+    "cropType": "Potatoes",
+    "plantingDate": "2024-04-01T00:00:00.000Z",
+    "expectedHarvestDate": "2024-08-15T00:00:00.000Z",
+    "status": "Tuber Formation",
+    "area": 40,
+    "notes": "Russet variety for local restaurant contracts."
+  }
+]
